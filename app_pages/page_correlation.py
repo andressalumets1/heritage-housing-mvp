@@ -99,7 +99,6 @@ def page_correlation_body():
     10. OpenPorchSF
     """)
 
-
     st.subheader("Visualizations")
     if st.checkbox("Heatmaps: Spearman, Pearson and PPS Correlations"):
         corr_threshold = 0.4
