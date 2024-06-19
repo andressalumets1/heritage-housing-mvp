@@ -1,4 +1,9 @@
+import sys
+sys.path.append('/workspace/heritage-housing-mvp')
+
 import pandas as pd
+import joblib
+
 
 def load_housing_data():
     """
@@ -21,7 +26,8 @@ def load_housing_cleaned():
     df3 = pd.read_csv("/workspace/heritage-housing-mvp/outputs/datasets/collection/HousePricesCleaned.csv")
     return df3
     
-#def load_pkl_files(file_path):
+def load_pkl_file(file_path):
     """
     Load the machine learning model file
     """
+    return joblib.load(filename=file_path)
