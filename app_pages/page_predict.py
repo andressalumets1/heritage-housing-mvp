@@ -54,9 +54,9 @@ def DrawInputsWidgets():
     
     percentageMin, percentageMax = 0.4, 2.0
 
-    col1, col2, col3, col4 = st.columns(4)
-    col5, col6, col7, col8 = st.columns(4)
-
+    col1, col2, col3, col4 = st.beta_columns(4)
+    col5, col6, col7, col8 = st.beta_columns(4)
+    
     X_live = pd.DataFrame([], index=[0])
 
     with col1:
