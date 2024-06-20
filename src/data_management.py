@@ -31,3 +31,13 @@ def load_pkl_file(file_path):
     Load the machine learning model file
     """
     return joblib.load(filename=file_path)
+
+def load_train_test_data():
+    """
+    Load train and test data
+    """
+    X_train = pd.read_csv('/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/X_train.csv')
+    X_test = pd.read_csv('/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/X_test.csv')
+    y_test = pd.read_csv('/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/y_test.csv')
+    y_train = pd.read_csv('/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/y_train.csv')
+    return X_train, X_test, y_train, y_test
