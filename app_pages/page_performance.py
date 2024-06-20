@@ -46,12 +46,12 @@ def page_performance_body():
     performing regression pipeline 'best_pipeline_regressor', and visualizations like
     'feature_importance' plot.
     """
-    X_train = load_data("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/X_train.csv")
-    y_train = load_data("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/y_train.csv")
-    X_test = load_data("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/X_test.csv")
-    y_test = load_data("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/y_test.csv")
-    best_pipeline_regressor = joblib.load("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl")
-    feature_importance = plt.imread('/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/feature_importance.png')
+    X_train = load_data("outputs/ml_pipeline/predict_price/v1/X_train.csv")
+    y_train = load_data("outputs/ml_pipeline/predict_price/v1/y_train.csv")
+    X_test = load_data("outputs/ml_pipeline/predict_price/v1/X_test.csv")
+    y_test = load_data("outputs/ml_pipeline/predict_price/v1/y_test.csv")
+    best_pipeline_regressor = joblib.load("outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl")
+    feature_importance = plt.imread('outputs/ml_pipeline/predict_price/v1/feature_importance.png')
 
     st.title("ML Pipeline Performance Dashboard")
     st.header("Data Overview")

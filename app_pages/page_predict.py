@@ -7,8 +7,8 @@ from src.machine_learning.predictive_analysis_ui import predict_price, predict_i
 def page_predict_body():
 
     version = 'v1'
-    regression_pipe = load_pkl_file("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl")
-    house_features = (pd.read_csv("/workspace/heritage-housing-mvp/outputs/ml_pipeline/predict_price/v1/X_train.csv")
+    regression_pipe = load_pkl_file("outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl")
+    house_features = (pd.read_csv("outputs/ml_pipeline/predict_price/v1/X_train.csv")
                                     .columns
                                     .to_list()
                                     )
