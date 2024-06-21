@@ -1,13 +1,12 @@
 import streamlit as st
 from app_pages.multipage import MultiPage
-
-# Load page scripts
-
 from app_pages.page_summary import page_summary_body
 from app_pages.page_correlation import page_correlation_body
 from app_pages.page_hypothesis import page_hypothesis_body
 from app_pages.page_performance import page_performance_body
 from app_pages.page_predict import page_predict_body
+
+st.set_page_config(page_title="Heritage Housing MVP", layout="wide")
 
 app = MultiPage(app_name= "Heritage-housing-MVP")
 

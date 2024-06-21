@@ -35,8 +35,7 @@ def page_hypothesis_body():
 
 
 
-    st.subheader("""**H2 - Hypothesis 2:
-    Size and Functional Space Utilization Impact on Sale Price**""")
+    st.subheader("""**H2 - Hypothesis 2: Size and Functional Space Utilization Impact on Sale Price**""")
 
     st.write("""
     Null Hypothesis (H₀): The size and functional space utilization

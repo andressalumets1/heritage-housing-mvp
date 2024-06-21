@@ -1,46 +1,12 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Heritage Housing Issues
+"Am i Responsive"
+<>
 
-## Template Instructions
+## Project Overview
+### Project Objective
 
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into the cloud-based IDE with your GitHub account.
-
-3. On your Dashboard, click on the Create button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-11. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-12. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
+The primary objective of this project was to analyze house attributes and their correlation with sale prices, and to develop a
+predictive model for estimating the sale prices of houses in Ames, Iowa. This included predicting the sale prices of four houses that client inherited as well as any other houses in the area. An ML regressor modeling was necessary and a dashboard was built with the help of streamlit. The application is live at: [https://heritage-housing-app-f62d499d61cc.herokuapp.com/]
 
 ## Dataset Content
 
@@ -85,7 +51,33 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Hypothesis and how to validate?
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+* H1 - Hypothesis 1: Quality of Interior Features and Sale Price
+* Null Hypothesis (H₀): The quality of interior features (e.g., kitchen quality, overall material and finish) does not significantly impact the sale price of houses in Ames, Iowa.
+
+* Alternative Hypothesis (H₁): Houses with higher-quality interior features command higher sale prices in Ames, Iowa.
+
+* Rationale: This hypothesis examines whether aspects such as the condition of the kitchen, the quality of materials used throughout the house, and the overall finish of interior spaces correlate with higher sale prices. These features are often significant factors in buyer decisions.
+
+* Findings from the Notebook:
+
+* The analysis identified variables such as OverallQual (Overall Quality) and KitchenQual (Kitchen Quality) as strongly correlated with higher sale prices.
+Specifically, houses with excellent kitchen quality (KitchenQual_Ex) and higher overall quality (OverallQuality) tend to command higher sale prices.
+Conclusion:
+
+* The findings support Hypothesis 1. There is evidence that the quality of interior features, particularly kitchen quality and overall quality, correlates positively with sale prices in Ames, Iowa.
+
+* Null Hypothesis (H₀): The size and functional space utilization of a house do not significantly affect its sale price in Ames, Iowa.
+
+* Alternative Hypothesis (H₁): Larger houses with efficiently utilized functional space tend to have higher sale prices in Ames, Iowa.
+
+* Rationale: This hypothesis explores whether the physical size of a house and how well its functional spaces are utilized influence its market value. Buyers often prioritize ample living space and well-designed functional areas.
+
+* Findings from the Notebook:
+
+* Variables such as GrLivArea (Above Ground Living Area), GarageArea, TotalBsmtSF (Total Basement Area), and 1stFlrSF (First Floor Area) were identified as influential factors positively correlated with sale prices.
+Larger sizes in these functional spaces generally lead to higher sale prices.
+* Conclusion:
+ The analysis supports Hypothesis 2. Larger sizes in functional spaces like living area, garage, basement, and first floor correlate positively with higher sale prices in Ames, Iowa.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -93,12 +85,140 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+**Objective:**
+
+To analyze and predict house sale prices in Ames, Iowa, with a focus on maximizing the sale prices of 4 inherited houses through data analysis and machine learning.
+
+**Business Requirements:
+
+1. Identify Correlated Variables:
+    * Investigate and visualize the correlation between house attributes and sale prices.
+    * Summarize insights from data visualizations to determine the most relevant variables affecting house prices.
+
+2. Predict Sale Prices:
+    * Develop an ML model to predict sale prices for 4 inherited houses and any other house in Ames, Iowa.
+    * Ensure the model achieves a minimum R2 score of 0.75 on both the train and test sets.
+
+3. Dashboard Development:
+    * Create a dashboard that includes:
+        * Project summary with dataset and client requirements.
+        * Findings on Feature correlations with house sale prices.
+        * Predicted sale prices of the 4 inherited houses with interactive widgets for real-time predictions.
+        * Hypothesis validation and project insights.
+        * Technical details of model performance and pipeline steps.
+
+**Epics and User Stories:**
+1. Informationg Gathering and Data Collection:
+    * User Story 1.1: As a data scientist, I want to collect the housing dataset from the provided public data source, so that I have the necessary information for analysis.
+    * User Story 1.2: As a data scientist, I want to explore the dataset to understand the types of attributes available, their distributions, and any potential anomalies, so that I can plan the data cleaning and preparation steps effectively.
+2. Data Visualizations, Cleaning, and Preparation:
+    * User Story 2.1: As a data scientist, I want to clean dataset by handling missing values, outliers, and inconsistencies so that the data is ready for analysis and modeling.
+    * User Story 2.2: As a data scientist, I want to create new features or transform existing features based on domain knowledge and data patterns so that the model has more relevant inputs.
+    * User Story 2.3: As a data scientist, I want to visualize the relationships between different house attributes and the sale price ranges so that I can identify important features for the regression model.
+3. Model Training, Optimization, and Validation:
+    * User Story 3.1: As a data scientist, I want to select appropriate regression algorithms, so that I can build a model that predicts house sale prices accurately.
+    * User Story 3.2: As a data scientist, I want to train regression model using historical housing data, so that the model can learn to predict house sale prices based on house attributes.
+    * User Story 3.3: As a data scientist, I want to evaluate the regression models using appropriate metrics, so that I can assess the accuracy and reliability of the predictions.
+    * User Story 3.4: As a data scientist, I want to optimize the regression models through hyperparameter tuning and cross-validation, so that the models achieve the best possible performance.
+    * User Story 3.5: As a data scientist, I want to validate the optimized models on a separate test dataset, so that I can ensure the models generalize well to unseen data.
+4. Dashboard Planning, Designing, and Development:
+    * User Story 4.1: As a data scientist, I want to develop the dashboard using Streamlit, so that the client has a robust and functional interface for interacting with the regression model predictions.
+5. Dashboard Deployment and Release:
+    * User Story 5.1: As a data scientist, I want to deploy the dashboard on a cloud platform or server, so that the client can access it from any device.
+    * User Story 5.2: As a data scientist, I want to create user documentation for the dashboard, so that the client knows how to effectively use the features and interpret the predictions.
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Navigation
+
+Each dashboard app page features a sidebar, that allows navigation between the various app pages via radio inputs.
+
+### Project Summary Page
+
+<picture>
+
+This page provides an overview of the Heritage Housing Issues project, including:
+
+* **Introduction:** Brief description of the project's goal to understand and predict house sale prices in Ames, Iowa.
+* **Dataset Content:** Information about the dataset used, sourced from Kaggle, detailing house attributes and sale prices.
+* **Business Requirements:** The client's two main requirements:
+    1. Understanding how house attributes correlate with sale prices.
+    2. Predicting sale prices for inherited houses and other houses in Ames.
+* **README:** A link to the project's README file for additional information.
+
+### Correlation Study Page
+
+This page presents the correlation analysis and exploratory data analysis (EDA) for the Heritage Housing Issues project. It includes:
+* Data Loading and Preprocessing
+    * Loading and cleaning the housing dataset.
+    * Appyling OneHotEncoding to categorical variables.
+* Correlation Calculations:
+    * Computing Spearman, Pearson, and Predictive Power Score (PPS) correlations.
+* Heatmaps:
+    * Visualizations of correlations using heatmaps for Spearman, Pearson, and PPS correlations.
+* Exploratory Data Analysis (EDA):
+    * Scatter plots of key numerical variables against SalePrice.
+    * Box plots of key categorical variables against SalePrice.
+* Key Insights:
+    * Identification of the most correlated variables with SalePrice.
+    * Detailed analysis and visualizations providing insights into how specific attributes correlate with house sale prices.
+
+This analysis helps address the client's requirement to understand how house attributes correlate with sale prices, forming a foundational step towards accurate price prediction.
+
+### Hypotheses Page
+
+The streamlit page contains the validation of two hypotheses about hosue prices in Ames, Iowa:
+
+1. Hypothesis 1: Quality of Interior Features
+    * Conclusion: Higher quality interior features, especially kitchen quality and overall quality, increase sale prices.
+2. Hypothesis 2: Size and Functional Space
+    * Conclusion: Larger houses with well-utilized functional spaces (living area, garage, basement, first floor) have higher sale prices.
+
+**Additional insights:**
+* Visual and statistical analyses confirm these relationships.
+**Final Asssessment:**
+* Both hypotheses are supported, providing valuable insights for predicting house sale prices.
+
+### Performance Page
+
+The streamlit application page focuses on evaluating and presenting the performance of a machine learning pipeline designed to predict house prices.
+
+1. Data Overview:
+    * Displays the structure of both training and test datasets used in the machine learning pipeline.
+2. Model Performance Metrics:
+    * Evaluates the regression model's performance using metrics such as R2 score, Mean Absolute Error, Mean Squared Error, and Root Mean Squared Error. The model meets the specified criterion of R2 = 0.75 on both training and test sets.
+3. Feature Importance:
+    * Visualizes the importance of features used in the model with an image plot.
+4. ML Pipeline Details:
+    * Shows the steps of the machine learning pipeline used for predicting house prices.
+5. Conclusion:
+    * Summarizes the project's methodology, including data cleaning, feature engineering, and model optimization using GridSearchCV. It highlights the selection of the Extra Trees Regressor as the best-performing model and emphasizes the significance of feature selection and model tuning in achieving high predictive accuracy.
+
+Overall, the page demonstrates the effectiveness of a systematic approach in developing a robust machine learning pipeline for real-world regression tasks, specifically in predicting house prices.
+
+### Price Prediction Page
+
+This Streamlit page is designed for predicting house sale prices using a machine learning model, focusing on inherited hosues and live inputs for any house in Ames, Iowa. Here's a summary of its key components:
+
+1. Inherited House Sale Price Prediction:
+* Load a pre-trained regression model ('regression_pipe) and features ('house_features') from saved files.
+* Predicts sale prices for inherited houses using 'predict_inherited_house_price' function.
+* Displays predicted prices and features of the inherited houses, along with the summed price of all houses.
+
+2. Live House Price Prediction:
+* Allows users to input live data (e.g. Garage Area, Living Area, Overall Quality, Basement Area, Year Built) for predicting sale prices of any house in Ames.
+* Uses 'DrawInputsWidgets' function to draw input widgets for user interaction.
+* On button click ("Predict Sale Price"), predicts the sale price using 'predict_price' function.
+
+3. Additional Features:
+* Provides information about the number and names of features available for user input ('house_features').
+* Ensures input values are within valid ranges and steps using Streamlit's number input widgets.
+
+4. Business Context:
+* Mentions a business requirement related to predicting sale prices of inherited houses and other houses in Ames, Iowa.
+
+Overall, the page intergrates data loading, model prediction, interactive user input, and result visualization to facilitate both inherited house price predictions and real-time predictions for any house based on specified features.
+
 
 ## Unfixed Bugs
 
