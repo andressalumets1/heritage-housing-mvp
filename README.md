@@ -222,13 +222,13 @@ Overall, the page intergrates data loading, model prediction, interactive user i
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* There are no known unfixed bugs.
 
 ## Deployment
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
+* The App live link is: <https://heritage-housing-app-f62d499d61cc.herokuapp.com/>
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
