@@ -55,7 +55,8 @@ def page_hypothesis_body():
     * Larger sizes in these functional spaces generally lead to higher sale prices.
 
     **Conclusion:**
-    * The analysis supports Hypothesis 2. Larger sizes in functional spaces like
+    * The analysis supports the second hypothesis alternative hypothesis.
+    Larger sizes in functional spaces like
     living area, garage, basement, and first floor correlate positively with higher
     sale prices in Ames, Iowa.
     """)
