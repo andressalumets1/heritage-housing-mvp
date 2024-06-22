@@ -135,7 +135,8 @@ Each dashboard app page features a sidebar, that allows navigation between the v
 
 ### Project Summary Page
 
-<picture>
+<img src='docs/screenshots/project_summary1.png'>
+<img src='docs/screenshots/project_summary2.png'>
 
 This page provides an overview of the Heritage Housing Issues project, including:
 
@@ -147,6 +148,11 @@ This page provides an overview of the Heritage Housing Issues project, including
 * **README:** A link to the project's README file for additional information.
 
 ### Correlation Study Page
+
+<img src='docs/screenshots/correlation1.png'>
+<img src='docs/screenshots/correlation2.png'>
+<img src='docs/screenshots/correlation3.png'>
+<img src='docs/screenshots/correlation4.png'>
 
 This page presents the correlation analysis and exploratory data analysis (EDA) for the Heritage Housing Issues project. It includes:
 * Data Loading and Preprocessing
@@ -167,6 +173,8 @@ This analysis helps address the client's requirement to understand how house att
 
 ### Hypotheses Page
 
+<img src='docs/screenshots/hypotheses.png'>
+
 The streamlit page contains the validation of two hypotheses about hosue prices in Ames, Iowa:
 
 1. Hypothesis 1: Quality of Interior Features
@@ -180,6 +188,11 @@ The streamlit page contains the validation of two hypotheses about hosue prices 
 * Both hypotheses are supported, providing valuable insights for predicting house sale prices.
 
 ### Performance Page
+
+<img src='docs/screenshots/performance1.png'>
+<img src='docs/screenshots/performance2.png'>
+<img src='docs/screenshots/performance3.png'>
+<img src='docs/screenshots/performance4.png'>
 
 The streamlit application page focuses on evaluating and presenting the performance of a machine learning pipeline designed to predict house prices.
 
@@ -197,6 +210,8 @@ The streamlit application page focuses on evaluating and presenting the performa
 Overall, the page demonstrates the effectiveness of a systematic approach in developing a robust machine learning pipeline for real-world regression tasks, specifically in predicting house prices.
 
 ### Price Prediction Page
+
+<img src='docs/screenshots/salepredict.png'>
 
 This Streamlit page is designed for predicting house sale prices using a machine learning model, focusing on inherited hosues and live inputs for any house in Ames, Iowa. Here's a summary of its key components:
 
@@ -227,26 +242,50 @@ Overall, the page intergrates data loading, model prediction, interactive user i
 ## Deployment
 
 ### Heroku
+The dashboard app was deployed on [Heroku](https://www.heroku.com/).
 
-* The App live link is: <https://heritage-housing-app-f62d499d61cc.herokuapp.com/>
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+The live URL link is: [https://heritage-housing-app-f62d499d61cc.herokuapp.com/]
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+It was deployed by following these steps:
+
+1. Log in to your account, or create an account if required.
+2. At the top right of the Heroku dashboard click the "New" button, and from the menu that appears, click the 'Create new app' button.
+3. In the 'Create New App' section that follows, enter a unique name for the app, (indicated by a green tick) in the App name field, and also select a region, using the 'choose a region drop-down list.
+4. Once you have entered a unique app name and selected your region, click the 'create app' button.
+5. After clicking 'create app' you are then taken to the deploy tab on your apps homepage. From here click on the 'Settings' tab button to view the app settings.
+6. On the settings tab scroll down to the 'Config Vars' section, and click the 'Config Vars' button to reveal the configuration variables for the app.
+7. After the config vars have been set, scroll back up to the top of the page, and then click back on the 'Deploy' tab button.
+8. On this tab, scroll down to the 'Deployment method' section. In this section select 'Github' as the deployment method.
+9. Log in to your Github account when requested, and select to deploy the main branch of the reporsitory.
+10. Finally enable automatic deploys, before clicking to deploy the branch.
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+* Pandas - is a powerful Python library for data manipulation and analysis. It provides data structures like DataFrames and Series, which are essential for working with structured data.
+* NumPy - is a fundamental package for numerical computing in Python, it provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently.
+* Feature Engine - is a library for feature engineering in Python. It simplifies the process of handling missing data, encoding categorical variables, discretizing continous variables, and more, which are crucial steps in preparing data for machine learning models.
+* Pandas Profiling - generates exploratory data analysis reports from Pandas DataFrames. It provides a quick way to understand the data, including summaries, distributions, correlations, and missing values.
+* PPScore - is a Python library for predictive feature selection and modeling. It calculates a metric to assess the predictive power of each feature in relation to a target variable.
+* SciPy: is a library for scientific and technical computing. It builds on NumPy and provides modules for optimization, linear algebra, integration, interpolation, special functions, and more.
+* Matplotlib - is a comprehensive library for creating static, animated and interactive visualizations in Python. It server as the foundation for many other plotting linbraries in Python.
+* Scikit-learn (sklearn) - Scikit-learn is a machine learning library for Python. It features various algorithms for classification, regression, clustering, dimensionality reduction, model selection, and preprocessing, along with tools for model evaluation and data pipelines.
+* Streamlit - is a framework for building interactive web applications for machine learning and data science projects. It simplifies the process of turning data scripts into shareable web apps.
+
+## Technologies used
+
+- Python
+- Streamlit
+- Jupyter Notebooks
+- Gitpod
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
+### Code
+- Several code bits and workflow areas were adapted and taken from Code-Institute-Solutions/churnometer (https://github.com/Code-Institute-Solutions/churnometer).
+- Projects found from github were of great help of helping:
+    * (https://github.com/MatthewBayfield/heritage_housing_issues.git)
+    * (https://github.com/Amareteklay/heritage-housing-issues.git)
+    * (https://github.com/SashG91/Heritage-Housing-Issues-PP5.git)
 
 ### Content
 
