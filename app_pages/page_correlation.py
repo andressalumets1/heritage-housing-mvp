@@ -3,16 +3,19 @@ from src.data_management import load_housing_cleaned
 import matplotlib.pyplot as plt
 import seaborn as sns
 import ppscore as pps
-sns.set_style("whitegrid")
 import numpy as np
 import plotly.express as px
 from feature_engine.encoding import OneHotEncoder
 
+sns.set_style("whitegrid")
+
+@st.cache
 def preprocess_data(df):
     encoder = OneHotEncoder(variables=df.columns[df.dtypes == 'object'].to_list(), drop_last=False)
     df_ohe = encoder.fit_transform(df)
     return df_ohe
 
+@st.cache
 def calculate_corr_pps(df_ohe):
     df_corr_spearman = df_ohe.corr(method="spearman")
     df_corr_pearson = df_ohe.corr(method="pearson")
@@ -66,12 +69,10 @@ def page_correlation_body():
 
     categorical_vars = ['OverallQual', 'KitchenQual_Ex', 'KitchenQual_Gd']
 
-    # EDA visualizations
-    st.subheader("Exploratory Data Analysis")
+    
     df_eda = df3.filter(variables_to_study + ['SalePrice'])
 
-    st.write(f"The most correlated variables to Sale Price are: {variables_to_study}")
-
+    # EDA visualizations
     st.header("""Housing prices correlation study""")
     st.info("""
     **BR1:** - The client is interested in knowing how house 
@@ -79,12 +80,8 @@ def page_correlation_body():
     """)
     st.write("""
     A correlation study was conducted to understand how the variables
-    are correlated to sale price of a property. With the result the first business
-    requirement was addressed. The result showed 11 results since of the encoding technique
-    used before making the correlation study, where KitchenQual_Ex and KitchenQual_Gd both
-    were included in the list of most correlated features to SalePrice. Therefore
-    KitchenQuality Ex/Gd in general can be seen as high importance.
-    The result of the correlation study showed that the most correlated variables
+    are correlated to sale price of a property. The result of the 
+    correlation study showed that the most correlated variables
     to the Sale Price are:
 
     1. OverallQual
@@ -100,7 +97,7 @@ def page_correlation_body():
     """)
 
     st.subheader("Visualizations")
-    if st.checkbox("Heatmaps: Spearman, Pearson and PPS Correlations"):
+    if st.checkbox("Heatmaps: Spearman, Pearson and PPS Correlations", key='heatmaps_1'):
         corr_threshold = 0.4
         pps_threshold = 0.4
         figsize = (12, 10)
@@ -137,7 +134,7 @@ def page_correlation_body():
         """)
 
     if st.checkbox("""Scatter Plots with the most important continous numerical variables
-    against the SalePrice"""):
+    against the SalePrice""", key='scatter_plots_1'):
         plot_scatter(df_eda, variables_to_study)
         st.subheader("Summary of Insights:")
         st.write("""
@@ -159,7 +156,7 @@ def page_correlation_body():
         """)
 
     if st.checkbox("""Box plots with the most important categorical variables
-    against the SalePrice"""):
+    against the SalePrice""", key='box_plots_1'):
         plot_box(df_ohe, categorical_vars)
         st.subheader("Box Plot Insights:")
         st.write("""

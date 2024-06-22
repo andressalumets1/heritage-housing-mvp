@@ -1,4 +1,7 @@
 import streamlit as st
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 # Class to generate multiple Streamlit pages using an object oriented approach
 class MultiPage:
@@ -7,14 +10,16 @@ class MultiPage:
         self.pages = []
         self.app_name = app_name
 
-        st.set_page_config(
-            page_title=self.app_name,
-            page_icon="🏆")
-
     def add_page(self, title, func) -> None:
+        logging.debug(f"Adding page: {title}")
         self.pages.append({"title": title, "function": func })
 
     def run(self):
         st.title(self.app_name)
         page = st.sidebar.radio("Menu", self.pages, format_func=lambda page: page['title'])
-        page['function']()
+        logging.debug(f"Selected page: {page['title']}")
+        try:
+            page['function']()
+        except Exception as e:
+            logging.exception("Exception occured while running the page function")
+            st.error(f"An error occurred: {e}")
