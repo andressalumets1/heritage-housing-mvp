@@ -11,12 +11,18 @@ sns.set_style("whitegrid")
 
 @st.cache
 def preprocess_data(df):
+    """
+    Preprocesses the data by performing One-Hot Encoding on categorical variables.
+    """
     encoder = OneHotEncoder(variables=df.columns[df.dtypes == 'object'].to_list(), drop_last=False)
     df_ohe = encoder.fit_transform(df)
     return df_ohe
 
 @st.cache
 def calculate_corr_pps(df_ohe):
+    """
+    Calculates the Spearman and Pearson correlations , and the Predictive Power Score (PPS) matrix.
+    """
     df_corr_spearman = df_ohe.corr(method="spearman")
     df_corr_pearson = df_ohe.corr(method="pearson")
     pps_matrix_raw = pps.matrix(df_ohe)
@@ -24,6 +30,9 @@ def calculate_corr_pps(df_ohe):
     return df_corr_spearman, df_corr_pearson, pps_matrix
 
 def heatmap_corr(df, threshold, figsize, font_annot):
+    """
+    Plots a heatmap of the correlation matrix with a given threshold.
+    """
     mask = np.zeros_like(df, dtype=np.bool)
     mask[np.triu_indices_from(mask)] = True
     mask[abs(df) < threshold] = True
@@ -33,6 +42,9 @@ def heatmap_corr(df, threshold, figsize, font_annot):
     st.pyplot(fig)
 
 def heatmap_pps(df, threshold, figsize, font_annot):
+    """
+    Plots a heatmap of the Predictive Power Score (PPS) matrix with a given threshold.
+    """
     mask = np.zeros_like(df, dtype=np.bool)
     mask[abs(df) < threshold] = True
     fig, ax = plt.subplots(figsize=figsize)
@@ -41,6 +53,9 @@ def heatmap_pps(df, threshold, figsize, font_annot):
     st.pyplot(fig)
 
 def plot_scatter(df, variables, target='SalePrice'):
+    """
+    Plots scatter plots for the specified variables against the target variable.
+    """
     for var in variables:
         fig, ax = plt.subplots(figsize=(10, 6))
         sns.scatterplot(data=df, x=var, y=target, ax=ax)
@@ -48,6 +63,9 @@ def plot_scatter(df, variables, target='SalePrice'):
         st.pyplot(fig)
 
 def plot_box(df, variables, target='SalePrice'):
+    """
+    Plots box plots for the specified categorical variables against the target variable.
+    """
     for var in variables:
         fig, ax = plt.subplots(figsize=(10, 6))
         sns.boxplot(data=df, x=var, y=target, ax=ax)
@@ -56,7 +74,7 @@ def plot_box(df, variables, target='SalePrice'):
 
 def page_correlation_body():
     """
-    Display the correlated features.
+    Display the correlated features and visualizations on a Streamlit page.
     """
     df3 = load_housing_cleaned()
     df_ohe = preprocess_data(df3)

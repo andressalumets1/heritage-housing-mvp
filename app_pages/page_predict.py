@@ -5,7 +5,9 @@ from datetime import date
 from src.machine_learning.predictive_analysis_ui import predict_price, predict_inherited_house_price
 
 def page_predict_body():
-
+    """
+    Constructs a streamlit page for prediction.
+    """
     version = 'v1'
     regression_pipe = load_pkl_file("outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl")
     house_features = (pd.read_csv("outputs/ml_pipeline/predict_price/v1/X_train.csv")
@@ -47,9 +49,17 @@ def page_predict_body():
             predict_price(X_live, house_features, regression_pipe)
 
 def  check_variables_for_UI(house_features):
+    """
+    Displays the number of house features available for user interface input
+    and lists them.
+    """
     st.write(f"* There are {len(house_features)} features for the UI: \n\n {house_features}")
 
 def DrawInputsWidgets():
+    """
+    Creates input widgets for the user to enter house features and returns the inputted
+    data as a DataFrame.
+    """
     df = load_housing_data()
     
     percentageMin, percentageMax = 0.4, 2.0

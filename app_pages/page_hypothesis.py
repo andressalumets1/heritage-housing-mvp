@@ -1,6 +1,9 @@
 import streamlit as st
 
 def page_hypothesis_body():
+    """
+    Displays the hypotheses and their validation on a Streamlit page.
+    """
     st.header("Project Hypotheses and Validation")
     
     st.subheader("**H1 - Hypothesis 1: Quality of Interior Features and Sale Price**")
