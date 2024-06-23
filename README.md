@@ -1,6 +1,6 @@
 # Heritage Housing Issues
 "Am i Responsive"
-![AmIResponsive](/workspace/heritage-housing-mvp/docs/screenshots/amiresponsive.png)
+![AmIResponsive](docs/screenshots/amiresponsive.png)
 
 ## Project Overview
 ### Project Objective
