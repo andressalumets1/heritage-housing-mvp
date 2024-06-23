@@ -79,10 +79,6 @@ Larger sizes in these functional spaces generally lead to higher sale prices.
 * Conclusion:
  The analysis supports Hypothesis 2. Larger sizes in functional spaces like living area, garage, basement, and first floor correlate positively with higher sale prices in Ames, Iowa.
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
-
 ## ML Business Case
 
 **Objective:**
@@ -287,19 +283,4 @@ It was deployed by following these steps:
     * (https://github.com/Amareteklay/heritage-housing-issues.git)
     * (https://github.com/SashG91/Heritage-Housing-Issues-PP5.git)
 
-### Content
-
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
-
-
-* In case you would like to thank the people that provided support through this project.
 
